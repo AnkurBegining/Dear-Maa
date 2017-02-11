@@ -9,11 +9,19 @@ public class Words {
     private String mHindiTranslation;
     private String mEnglishTranslation;
     private int mImageResourceId;
+    private int mAudioResourceId;
 
     public Words(String hindiTranslation, String englishTranslation ,int imageResourceID){
         mEnglishTranslation=englishTranslation;
         mHindiTranslation=hindiTranslation;
         mImageResourceId=imageResourceID;
+    }
+
+    public Words(String hindiTranslation, String englishTranslation ,int imageResourceID, int audioResourceID){
+        mEnglishTranslation=englishTranslation;
+        mHindiTranslation=hindiTranslation;
+        mImageResourceId=imageResourceID;
+        mAudioResourceId= audioResourceID;
 
     }
 
@@ -27,5 +35,9 @@ public class Words {
 
     public int getmImageResourceId(){
         return mImageResourceId;
+    }
+
+    public int getmAudioResourceId(){
+        return mAudioResourceId;
     }
 }
