@@ -47,7 +47,15 @@ public class WordAdapter extends ArrayAdapter {
         numberTextView.setText(currentWord.getmEnglishTranslation());
 
         ImageView iconImageView =(ImageView)listItemView.findViewById(R.id.imageIcon);
-        iconImageView.setImageResource(currentWord.getmImageResourceId());
+        if(currentWord.hasImage()){
+            iconImageView.setImageResource(currentWord.getmImageResourceId());
+            iconImageView.setVisibility(View.VISIBLE);
+
+        }
+        else{
+            iconImageView.setVisibility(View.GONE);
+        }
+
 
         View textContainer = listItemView.findViewById(R.id.text_container);
         int color= ContextCompat.getColor(getContext(),mImageResourceId);

@@ -8,13 +8,14 @@ public class Words {
 
     private String mHindiTranslation;
     private String mEnglishTranslation;
-    private int mImageResourceId;
+    private int mImageResourceId=NO_IMAGE_PROVIDED;
     private int mAudioResourceId;
+    private static final int NO_IMAGE_PROVIDED = -1;
 
-    public Words(String hindiTranslation, String englishTranslation ,int imageResourceID){
+    public Words(String hindiTranslation, String englishTranslation ,int audioResourceId){
         mEnglishTranslation=englishTranslation;
         mHindiTranslation=hindiTranslation;
-        mImageResourceId=imageResourceID;
+        mAudioResourceId=audioResourceId;
     }
 
     public Words(String hindiTranslation, String englishTranslation ,int imageResourceID, int audioResourceID){
@@ -39,5 +40,9 @@ public class Words {
 
     public int getmAudioResourceId(){
         return mAudioResourceId;
+    }
+
+    public boolean hasImage(){
+        return mImageResourceId!=NO_IMAGE_PROVIDED;
     }
 }
